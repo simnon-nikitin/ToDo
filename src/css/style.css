@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Open+Sans:wght@300;700&family=Tinos:wght@400;700&display=swap');
+
+
+
+
+body{
+  font-family: 'Golos', sans-serif;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #a7abaa;
+  color: #e6ecee;
+}
+li {
+  list-style-type: none;
+}
+ul {
+ padding-left: 0;
+}
+.container {
+
+  margin: 2vh auto;
+  width: 75%;
+  height: 96vh;
+  background: url("/src/img/MOUTN.jpg") no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+}
+.title{
+  margin-top: 20px;
+  min-height: 40px;
+  margin-left: 25%;
+  display: flex;
+  align-items: center;
+}
+.day-icon{
+  margin-right: 5px;
+}
+h1{
+  margin: 0;
+}
+.date{
+  margin-left: 25%;
+  margin-top: 8px;
+
+}
+.task-list {
+  margin: 50px auto;
+  width: 50%;
+  height: auto;
+}
+.task-list__item{
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  background: #282a2b; 
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 5px;
+}
+span {
+margin-left: 20px;
+}
+.star-icon{
+  margin-left: auto;
+  filter: invert(89%) sepia(2%) saturate(1579%) hue-rotate(192deg) brightness(111%) contrast(82%);
+}
+.star-icon:hover{ 
+  filter: invert(98%) sepia(34%) saturate(270%) hue-rotate(169deg) brightness(100%) contrast(88%);
+}
+.painted{
+
+}
+
+.create-form-wraper{
+  width: 50%;
+  height: auto;
+  margin: 50px auto;
+  margin-bottom: 30px;
+}
+
+.create-form{  
+  min-height: 40px;
+  background-color: #282a2b;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  border-radius: 5px;
+  
+}
+
+
+.create-form__input{
+  margin-left: 20px;
+  background-color: #282a2b;
+  border: none;
+  width: auto;
+  flex-grow: 1;
+  color: #e6ecee;
+}
+
+::-webkit-input-placeholder {
+  color: rgb(204, 195, 195);
+}
+
+
+.create-form__button{
+  margin-left: 20px;
+  background-color: #282a2b;
+  border: 1px solid #e6ecee;
+  border-radius: 5px;
+  color: #e6ecee;
+  margin-left: 20px;
+}
+
+
+.create-form__icon{
+  margin-left: 20px;
+  filter: invert(89%) sepia(2%) saturate(1579%) hue-rotate(192deg) brightness(111%) contrast(82%);
+}
+.task-list-cheked__title{
+  background: #353738;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-left: 25%;
+  display: inline-block;
+  vertical-align: top;
+}
+.task-list-cheked{
+
+  margin: 50px auto;
+  margin-top: 20px;
+  width: 50%;
+  height: auto;
+}
+.task-list__item--done{
+  background: #353738; 
+  text-decoration: line-through;
+}
+.task-list-cheked__counter{
+  margin: 0;
+}
