@@ -1,4 +1,4 @@
-let taskList = document.querySelector('.task-list')
+let taskList = document.querySelector('.js-task-list')
 let items = taskList.children;
 let template = document.querySelector('#task-template').content
 let newElement = template.querySelector('.task-list__item');
@@ -13,35 +13,56 @@ let doneTitle = document.querySelector('.task-list-cheked__title')
 let doneCounter = doneTitle.querySelector('span')
 
 
-let addCheckHandler = function (item) {
-    let checkbox = item.querySelector('.create-form__checkbox');
-    checkbox.addEventListener('change', function () {
-        let clone = item.cloneNode(true);
-        clone.classList.add('task-list__item--done')
-        taskListCheked.appendChild(clone)
 
-        item.remove();
-        doneCounter.textContent = ' ' + chekedItems.length
-    });
-  };
+let addCheckHandler = function (item) {
+  let checkbox = item.querySelector('.create-form__checkbox');
+  checkbox.addEventListener('change', function (evt) {
+        if(evt.target.checked) {
+        item.classList.add('task-list__item--done')
+        taskListCheked.appendChild(item)
+       //console.log(evt.target.checked);
+        }else{
+          item.classList.remove('task-list__item--done')
+          taskList.appendChild(item)
+        }
+      
+       doneCounter.textContent = ' ' + chekedItems.length
+  });
+};
+
+
+
+
+let checkboxCreate = document.querySelector('#checkboxcreate')
+
 
 form.addEventListener('submit', function (evt){
-    evt.preventDefault()
-  
-    let taskText = input.value
-    let task = newElement.cloneNode(true);
-  
-    let taskDescription = task.querySelector('span')
-    taskDescription.textContent = taskText;
-    addCheckHandler(task);
+  evt.preventDefault()
 
-    taskList.appendChild(task)
-    input.value = '' 
-  });
+  let taskText = input.value
+  let task = newElement.cloneNode(true);
+
+  let taskDescription = task.querySelector('span')
+  taskDescription.textContent = taskText;
+  addCheckHandler(task);
+
   
+    if (checkboxCreate.checked) {
+      task.querySelector('.create-form__checkbox').checked = true
+      task.classList.add('task-list__item--done')
+      taskListCheked.appendChild(task)
+    } else {
+      taskList.appendChild(task)
+    }
 
-let checkboxDone = chekedItems.querySelector('input')
+  input.value = '' 
+});
 
-  console.log(checkboxDone)
+
+
+
+
+
+
         
  

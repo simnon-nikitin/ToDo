@@ -47,7 +47,8 @@ h1{
 .task-list {
   margin: 50px auto;
   width: 50%;
-  height: auto;
+  height: 25vh;
+  overflow-y: auto;
 }
 .task-list__item{
   display: flex;
@@ -139,4 +140,13 @@ margin-left: 20px;
 }
 .task-list-cheked__counter{
   margin: 0;
+}
+ul.task-list::-webkit-scrollbar {
+  background: aliceblue;
+  border-radius: 5px;
+  width: 13px;
+}
+ul.task-list::-webkit-scrollbar-thumb {
+  background: #939393;
+  border-radius: 5px;
 }
