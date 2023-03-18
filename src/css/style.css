@@ -26,20 +26,20 @@ ul {
   background-size: cover;
   border-radius: 20px;
 }
-.title{
+.header__title{
   margin-top: 20px;
   min-height: 40px;
   margin-left: 25%;
   display: flex;
   align-items: center;
 }
-.day-icon{
+.header__icon{
   margin-right: 5px;
 }
 h1{
   margin: 0;
 }
-.date{
+.header__date{
   margin-left: 25%;
   margin-top: 8px;
 
@@ -58,28 +58,26 @@ h1{
   border-radius: 5px;
   padding: 5px 20px;
   margin-bottom: 5px;
+  position: relative;
 }
 span {
-margin-left: 20px;
+  margin-left: 20px;
 }
 .star-icon{
-  margin-left: auto;
-  filter: invert(89%) sepia(2%) saturate(1579%) hue-rotate(192deg) brightness(111%) contrast(82%);
+  /*margin-left: auto;*/
+}
+.context-menu__delete-icon{
+  
 }
 .star-icon:hover{ 
-  filter: invert(98%) sepia(34%) saturate(270%) hue-rotate(169deg) brightness(100%) contrast(88%);
+  
 }
-.painted{
-
-}
-
 .create-form-wraper{
   width: 50%;
   height: auto;
   margin: 50px auto;
   margin-bottom: 30px;
 }
-
 .create-form{  
   min-height: 40px;
   background-color: #282a2b;
@@ -87,10 +85,7 @@ margin-left: 20px;
   align-items: center;
   padding: 5px 20px;
   border-radius: 5px;
-  
 }
-
-
 .create-form__input{
   margin-left: 20px;
   background-color: #282a2b;
@@ -104,7 +99,6 @@ margin-left: 20px;
   color: rgb(204, 195, 195);
 }
 
-
 .create-form__button{
   margin-left: 20px;
   background-color: #282a2b;
@@ -113,8 +107,6 @@ margin-left: 20px;
   color: #e6ecee;
   margin-left: 20px;
 }
-
-
 .create-form__icon{
   margin-left: 20px;
   filter: invert(89%) sepia(2%) saturate(1579%) hue-rotate(192deg) brightness(111%) contrast(82%);
@@ -126,13 +118,6 @@ margin-left: 20px;
   margin-left: 25%;
   display: inline-block;
   vertical-align: top;
-}
-.task-list-cheked{
-
-  margin: 50px auto;
-  margin-top: 20px;
-  width: 50%;
-  height: auto;
 }
 .task-list__item--done{
   background: #353738; 
@@ -149,4 +134,25 @@ ul.task-list::-webkit-scrollbar {
 ul.task-list::-webkit-scrollbar-thumb {
   background: #939393;
   border-radius: 5px;
+}
+.task__context-menu{
+  min-width: 150px;
+  display: none;
+  position: fixed;
+  background: #1b1b1b;
+  color: #d64747;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.task__context-menu--visible{
+  display: flex;
+}
+.task__context-menu--visible:hover{
+  background: #39393e;
+}
+.context-menu__delete-icon{
+
+}
+.context-menu__title{
+  margin-left: 10px;
 }
