@@ -12,6 +12,8 @@ let chekedItems = taskListCheked.children;
 let doneTitle = document.querySelector('.js-task-list-cheked__title');
 let doneCounter = doneTitle.querySelector('.js-task-list-cheked__counter');
 
+
+
 let addCheckHandler = function (item) {
   let checkbox = item.querySelector('.js-create-form__checkbox');
   checkbox.addEventListener('change', function (evt) {
@@ -46,11 +48,33 @@ let deleteTask = function(item) {
       }
     }, false);
   });
-  }
+  };
 
-let checkboxCreate = document.querySelector('#checkboxcreate');
 
-form.addEventListener('submit', function (evt){
+let markAsImportant = function(item) {
+  let iconBlock = item.querySelector('.js-task-list__item-star-block');
+ 
+  iconBlock.addEventListener('click', function() {
+    iconBlock.classList.toggle('filled');
+
+    if (iconBlock.classList.contains('filled')) {
+      item.classList.add('important');
+    } else {
+      item.classList.remove('important');
+    }; 
+  });
+};
+
+
+
+let checkboxCreate = document.querySelector('.js-create-form__checkbox');
+let starIconCreate = document.querySelector('.js-create-form__icon');
+
+starIconCreate.addEventListener('click', function() {
+  starIconCreate.classList.toggle('filled');
+});
+
+form.addEventListener('submit', function (evt) {
   evt.preventDefault();
 
   let taskText = input.value;
@@ -59,8 +83,16 @@ form.addEventListener('submit', function (evt){
 
   taskDescription.textContent = taskText;
   addCheckHandler(task);
-  deleteTask(task)
+  deleteTask(task);
   
+    if(starIconCreate.classList.contains('filled')) {
+      task.classList.add('important');
+    } else {
+      task.classList.remove('important');
+    };
+
+    markAsImportant(task);
+
     if (checkboxCreate.checked) {
       task.querySelector('.js-create-form__checkbox').checked = true;
       task.classList.add('task-list__item--done');
@@ -68,13 +100,17 @@ form.addEventListener('submit', function (evt){
       doneCounter.textContent = ' ' + chekedItems.length;
     } else {
       taskList.appendChild(task);
-    }
+    };
 
   input.value = '';
 });
 
+let importantTasksBtn = document.querySelector('.important-tasks');
 
-
+importantTasksBtn.addEventListener('click', function() {
+  taskList.classList.toggle('task-list--important')
+  taskListCheked.classList.toggle('task-list--important')
+});
 
 
 
