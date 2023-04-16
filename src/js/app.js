@@ -13,7 +13,6 @@ let doneTitle = document.querySelector('.js-task-list-cheked__title');
 let doneCounter = doneTitle.querySelector('.js-task-list-cheked__counter');
 
 
-
 let addCheckHandler = function (item) {
   let checkbox = item.querySelector('.js-create-form__checkbox');
   checkbox.addEventListener('change', function (evt) {
@@ -105,14 +104,21 @@ form.addEventListener('submit', function (evt) {
   input.value = '';
 });
 
-let importantTasksBtn = document.querySelector('.important-tasks');
+let showImportantBtn = document.querySelector('.js-important-tasks-btn');
 
-importantTasksBtn.addEventListener('click', function() {
+showImportantBtn.addEventListener('click', function() {
+  
+  if(showImportantBtn.textContent === 'Важные') {
+
+    showImportantBtn.textContent = 'Все задачи';
+  } else {
+    showImportantBtn.textContent = 'Важные';
+  }
+  
   taskList.classList.toggle('task-list--important')
   taskListCheked.classList.toggle('task-list--important')
 });
 
 
 
-        
- 
+     
