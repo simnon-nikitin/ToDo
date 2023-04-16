@@ -10,6 +10,4 @@ In the current version, you can:
 - To mark a task as important (this can be done before and after creating the task)
 - Hide unimportant tasks
 
-Future updates will add features such as:
-- Display current date and day of the week
 
