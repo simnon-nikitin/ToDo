@@ -21,7 +21,7 @@ ul {
   margin: 2vh auto;
   width: 75%;
   height: 96vh;
-  background: url("/src/img/MOUTN.jpg") no-repeat;
+  background: url("../img/MOUTN.jpg") no-repeat;
   background-size: cover;
   border-radius: 20px;
 }
@@ -64,9 +64,9 @@ h1{
 
 
 .task-list {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 50%;
-  height: 25vh;
+  height: 28vh;
   overflow-y: auto;
 }
 .task-list__item{
@@ -115,7 +115,7 @@ span {
 .create-form-wraper{
   width: 50%;
   height: auto;
-  margin: 50px auto;
+  margin: 30px auto;
   margin-bottom: 30px;
 }
 .create-form{  
